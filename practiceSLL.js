@@ -1,28 +1,28 @@
-class Node{
-    constructor(val){
-        this.val = val;
-        this.next = null;
-    }
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
 }
 
-class SinglyLinkedList{
-    constructor(){
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+  push(val) {
+    var newNode = new Node(val);
+    if (this.head === null) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
     }
-    push(val){
-        var newNode = new Node(val);
-        if(this.head === null){
-            this.head = newNode;
-            this.tail = this.head;
-        }else{
-            this.tail.next = newNode;
-            this.tail = newNode;
-        }
-        this.length++;
-        return this;
-    }
+    this.length++;
+    return this;
+  }
 }
 
 var linkedList = new SinglyLinkedList();
